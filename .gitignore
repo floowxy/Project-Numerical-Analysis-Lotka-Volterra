@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.out
+nohup.out
+
+# Temporary files
+/tmp/
+*.tmp
+
+# Videos generados (muy pesados para GitHub)
+backend/videos/output/*.mp4
+backend/videos/VideoLotkaProV2/
+
+# Configuración temporal de Manim
+backend/videos/lotka_config.json
+
+# Media files (si son muy grandes)
+# Descomenta si quieres excluir todos los videos
+# media/videos/**/*.mp4
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
