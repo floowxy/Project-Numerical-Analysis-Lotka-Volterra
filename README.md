@@ -7,8 +7,6 @@
 
 Sistema avanzado de simulación y visualización del modelo depredador-presa de Lotka-Volterra con interfaz web interactiva, tema cyberpunk quantum, y generación de videos animados profesionales.
 
-[![Live Demo](https://img.shields.io/badge/🌐_Demo_Live-proyectovolterra.flowxy.org-00f3ff?style=for-the-badge)](https://proyectovolterra.flowxy.org)
-
 ---
 
 ## 📋 Descripción
@@ -81,6 +79,10 @@ Este proyecto implementa una simulación numérica completa del sistema de ecuac
 - **Manim** ≥0.19.0 - Motor de animación matemática
 - **Cairo/Pango** ≥0.6.1 - Renderizado de gráficos
 - **ModernGL** ≥5.12.0 - Aceleración GPU
+
+### Herramientas de Despliegue
+
+- **Cloudflare Tunnel** - Exposición segura de servidores locales (opcional)
 
 ---
 
@@ -311,77 +313,19 @@ El diseño utiliza una paleta neón sobre fondo oscuro:
 
 ---
 
-## 🌐 Despliegue
-
-### Cloudflare Tunnel (Recomendado)
-
-```bash
-# Instalar Cloudflare Tunnel
-cloudflared tunnel create lotka-volterra
-
-# Configurar túnel para puerto 8050
-cloudflared tunnel route dns lotka-volterra proyectovolterra.flowxy.org
-
-# Ejecutar túnel
-cloudflared tunnel run lotka-volterra
-```
-
-### Producción (Docker - Futuro)
-
-```dockerfile
-# Ejemplo básico
-FROM python:3.13-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8050 8000
-CMD ["python", "app.py"]
-```
-
----
-
 ## 📝 Licencia
 
 Este proyecto fue desarrollado como parte del curso de **Análisis Numérico** en la **Universidad Nacional Mayor de San Marcos (UNMSM)**.
 
 ---
 
-## 👥 Autores
+## 👤 Autor
 
-**Equipo de Desarrollo:**
-
-- Diego Sotelo
-- Alexis Gonzales  
-- Paolo Villavicencio
-- Álvaro Salazar
-
-**Mantenedor Principal:**
+**floowxy**
 
 - 📧 Email: <alejsot1234@gmail.com>
 - 🐙 GitHub: [@floowxy](https://github.com/floowxy)
 
 ---
 
-## 🙏 Agradecimientos
-
-- **3Blue1Brown** - Por crear Manim
-- **Comunidad Manim** - Documentación y soporte
-- **Plotly/Dash** - Framework web Python
-- **FastAPI** - Framework API moderno
-- **Dr. Richard Cubas Becerra** - Curso de Análisis Numérico
-
----
-
-## 📚 Referencias
-
-1. Burden, R. L., & Faires, J. D. (2011). *Análisis Numérico*. Cengage Learning.
-2. Chapra, S. C., & Canale, R. P. (2015). *Métodos Numéricos para Ingenieros*. McGraw-Hill.
-3. The Manim Community. (2024). *Manim Documentation*. <https://www.manim.community/>
-
----
-
-<p align="center">
-  <b>⚡ QUANTUM SIMULATION SYSTEM · ONLINE 2025 ⚡</b><br>
-  <i>Developed with 💙 for UNMSM - Facultad de Ingeniería de Sistemas e Informática</i>
-</p>
+**⚡ QUANTUM SIMULATION SYSTEM · ONLINE 2025 ⚡**
