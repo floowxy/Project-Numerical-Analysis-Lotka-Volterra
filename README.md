@@ -58,7 +58,7 @@ Este proyecto implementa una simulación completa del sistema de ecuaciones dife
 1. **Clonar el repositorio**
 
 ```bash
-git clone https://github.com/TU_USUARIO/Project-Numerical-Analysis-Lotka-Volterra.git
+git clone https://github.com/floowxy/Project-Numerical-Analysis-Lotka-Volterra.git
 cd Project-Numerical-Analysis-Lotka-Volterra
 ```
 
@@ -191,7 +191,7 @@ Este proyecto fue desarrollado como parte de un curso de Análisis Numérico.
 **floowxy**
 
 - Email: <alejsot1234@gmail.com>
-- GitHub: [@TU_USUARIO](https://github.com/TU_USUARIO)
+- GitHub: [@floowxy](https://github.com/floowxy)
 
 ## 🙏 Agradecimientos
 
