@@ -1,0 +1,391 @@
+/* ======================================================
+   EFECTOS PREMIUM ADICIONALES - LOTKA VOLTERRA
+   - Partículas animadas de fondo
+   - Efectos de loader personalizado
+   - Animaciones extra
+   - Efectos quantum loading
+====================================================== */
+
+/* ==========================================
+   1. PARTÍCULAS DE FONDO ANIMADAS
+========================================== */
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(20px, -20px);
+        opacity: 0.8;
+    }
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #00f3ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    animation: particleFloat 6s ease-in-out infinite;
+}
+
+/* ==========================================
+   2. QUANTUM LOADER (PERSONALIZADO)
+========================================== */
+@keyframes quantumSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes quantumPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.quantum-loader-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.quantum-spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.quantum-spinner::before,
+.quantum-spinner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.quantum-spinner::before {
+    border-top-color: #00f3ff;
+    border-right-color: #bc13fe;
+    animation: quantumSpin 1.5s linear infinite;
+}
+
+.quantum-spinner::after {
+    border-top-color: #ff0055;
+    border-left-color: #00ff9d;
+    animation: quantumSpin 2s linear infinite reverse;
+}
+
+/* ==========================================
+   3. EFECTOS DE TEXTO GLITCH
+========================================== */
+@keyframes glitch {
+
+    0%,
+    100% {
+        text-shadow:
+            2px 2px 0 #ff0055,
+            -2px -2px 0 #00f3ff;
+    }
+
+    25% {
+        text-shadow:
+            -2px -2px 0 #ff0055,
+            2px 2px 0 #00f3ff;
+    }
+
+    50% {
+        text-shadow:
+            2px -2px 0 #ff0055,
+            -2px 2px 0 #00f3ff;
+    }
+
+    75% {
+        text-shadow:
+            -2px 2px 0 #ff0055,
+            2px -2px 0 #00f3ff;
+    }
+}
+
+.glitch-effect {
+    animation: glitch 0.5s ease-in-out;
+}
+
+/* ==========================================
+   4. LOADING BAR PREMIUM
+========================================== */
+@keyframes loadingBar {
+    0% {
+        width: 0%;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        width: 100%;
+        background-position: 0% 50%;
+    }
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 243, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.loading-bar {
+    height: 100%;
+    background: linear-gradient(90deg,
+            #00f3ff,
+            #bc13fe,
+            #ff0055,
+            #00f3ff);
+    background-size: 200% 100%;
+    animation: loadingBar 2s ease-in-out infinite;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+}
+
+/* ==========================================
+   5. EFECTOS HOVER PARA ICONOS
+========================================== */
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.icon-interactive {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-interactive:hover {
+    animation: iconBounce 0.6s ease;
+}
+
+/* ==========================================
+   6. EFECTOS DE ÉXITO/ERROR ANIMADOS
+========================================== */
+@keyframes successSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.success-card,
+.error-card {
+    animation: successSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================
+   7. EFECTOS DE BRILLO EN HOVER PARA CARDS
+========================================== */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -200%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    animation: shimmer 3s infinite;
+}
+
+/* ==========================================
+   8. EFECTO DE TYPING PARA TEXTO
+========================================== */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-right-color: transparent;
+    }
+
+    50% {
+        border-right-color: #00f3ff;
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00f3ff;
+    animation:
+        typing 3s steps(40, end),
+        blink 0.75s step-end infinite;
+}
+
+/* ==========================================
+   9. EFECTOS DE ESCALADO EN HOVER
+========================================== */
+.scale-hover {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scale-hover:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   10. BORDES ANIMADOS ROTATIVOS
+========================================== */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating-border {
+    position: relative;
+    z-index: 1;
+}
+
+.rotating-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,
+            #00f3ff,
+            #bc13fe,
+            #ff0055,
+            #00ff9d);
+    border-radius: inherit;
+    z-index: -1;
+    animation: rotateBorder 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rotating-border:hover::before {
+    opacity: 1;
+}
+
+/* ==========================================
+   11. EFECTOS DE PULSACIÓN PARA BOTONES
+========================================== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(0, 243, 255, 0);
+    }
+}
+
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+/* ==========================================
+   12. EFECTOS DE RESPLANDOR FLOTANTE
+========================================== */
+@keyframes floatingGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgba(0, 243, 255, 0.3),
+            0 0 40px rgba(188, 19, 254, 0.2);
+        transform: translateY(0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px rgba(0, 243, 255, 0.5),
+            0 0 60px rgba(188, 19, 254, 0.4);
+        transform: translateY(-5px);
+    }
+}
+
+.floating-glow {
+    animation: floatingGlow 3s ease-in-out infinite;
+}
