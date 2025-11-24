@@ -1,75 +1,105 @@
 # ============================================================
-# PROYECTO LOTKA-VOLTERRA - DEPENDENCIAS OPTIMIZADAS
+# LOTKA-VOLTERRA SIMULATION SYSTEM - REQUIREMENTS
 # ============================================================
-# Versión: 2.0 - Basado en análisis exhaustivo del código
-# Última actualización: 2025-11-24
-# 
-# Este archivo contiene SOLO las dependencias realmente
-# utilizadas en el proyecto, verificadas mediante análisis
-# de imports en todos los archivos Python.
-#
-# Total: 8 paquetes core + dependencias automáticas
-# Instalación estimada: 2-5 minutos
+# Python Version: 3.9+ (Recommended: 3.12 or 3.13)
+# Last Updated: 2025-11-24
 # ============================================================
 
 # ============================================================
 # WEB FRAMEWORK & VISUALIZATION
 # ============================================================
-# Usado en: app.py, pages/*.py
-dash>=2.14.0              # Framework web reactivo
-plotly>=5.18.0            # Gráficos interactivos
-Flask>=3.0.0              # Servidor web (incluido con Dash)
+dash>=3.3.0
+plotly>=6.5.0
+Flask>=3.1.2
 
 # ============================================================
 # SCIENTIFIC COMPUTING
 # ============================================================
-# Usado en: backend/simulation.py, backend/scenes/video3.py, pages/simulador.py
-numpy>=1.24.0,<2.0.0      # Operaciones vectoriales (límite <2.0 por compatibilidad con Manim)
+numpy>=2.3.5
+scipy>=1.16.3
 
 # ============================================================
-# API BACKEND
+# VIDEO RENDERING (MANIM)
+# Notes: 
+# - Manim 0.19.0+ supports Python 3.9-3.13
+# - ManimPango 0.6.0+ supports Python 3.13
 # ============================================================
-# Usado en: backend/app.py
-fastapi>=0.109.0          # Framework API REST
-uvicorn[standard]>=0.27.0 # Servidor ASGI con soporte WebSocket
+manim>=0.19.0
+ManimPango>=0.6.0
+pycairo>=1.24.0
+moderngl>=5.10.0
+moderngl-window>=2.4.0
+glcontext>=3.0.0
+pyglet>=2.0.10
+pyglm>=2.7.0
+av>=12.3.0
+pydub>=0.25.1
+screeninfo>=0.8.1
+skia-pathops>=0.9.0
+svgelements>=1.9.6
+isosurfaces>=0.1.2
+mapbox_earcut>=1.0.1
+srt>=3.5.3
 
 # ============================================================
-# VIDEO RENDERING
+# API & BACKEND (FASTAPI)
 # ============================================================
-# Usado en: backend/scenes/video3.py, backend/video_tools.py
-manim>=0.18.0             # Motor de animación matemática
-pydub>=0.25.1             # Procesamiento de audio
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.5
+starlette>=0.41.0
+pydantic>=2.8.0
+pydantic_core>=2.20.1
 
 # ============================================================
-# HTTP CLIENT
+# UTILITIES
 # ============================================================
-# Usado en: pages/simulador.py
-requests>=2.31.0          # Cliente HTTP para comunicación frontend-backend
+requests>=2.32.3
+click>=8.1.7
+cloup>=3.0.0
+watchdog>=4.0.1
+tqdm>=4.66.5
+rich>=13.9.1
+Pygments>=2.17.2
+markdown-it-py>=3.0.0
+mdurl>=0.1.2
 
 # ============================================================
-# UTILITIES (Instaladas automáticamente por Manim)
+# MATHEMATICAL & SYMBOLIC
 # ============================================================
-# Las siguientes son instaladas como dependencias de Manim,
-# pero se especifican aquí para mayor claridad:
-tqdm>=4.66.0              # Barras de progreso
-rich>=13.7.0              # Output formateado en terminal
-pillow>=10.0.0            # Procesamiento de imágenes
+sympy>=1.13.1
+mpmath>=1.3.0
+networkx>=3.3
 
 # ============================================================
-# NOTAS IMPORTANTES
+# DATA PROCESSING
 # ============================================================
-# 1. FFmpeg es REQUERIDO pero NO es un paquete Python
-#    Instalar con: sudo pacman -S ffmpeg (Arch)
-#                  sudo apt install ffmpeg (Ubuntu/Debian)
-#                  brew install ffmpeg (macOS)
-#
-# 2. Python 3.9-3.12 recomendado (3.11 ideal)
-#    Python 3.13 puede tener problemas de compatibilidad
-#
-# 3. NumPy <2.0 es CRÍTICO para compatibilidad con Manim
-#    No cambiar esta restricción
-#
-# 4. Siempre usar entorno virtual:
-#    python3 -m venv venv && source venv/bin/activate
-#
-# 5. Ver INSTALL.md y dependency_analysis.md para más detalles
+beautifulsoup4>=4.12.3
+soupsieve>=2.6
+
+# ============================================================
+# WEB & HTTP CORE
+# ============================================================
+Werkzeug>=3.0.3
+Jinja2>=3.1.4
+MarkupSafe>=2.1.5
+certifi>=2024.0.0
+charset-normalizer>=3.3.2
+urllib3>=2.2.1
+idna>=3.7
+h11>=0.14.0
+anyio>=4.3.0
+sniffio>=1.3.1
+
+# ============================================================
+# SYSTEM & CORE
+# ============================================================
+blinker>=1.7.0
+itsdangerous>=2.1.2
+decorator>=5.1.1
+nest-asyncio>=1.6.0
+packaging>=24.2
+pillow>=10.3.0
+annotated-types>=0.6.0
+typing_extensions>=4.11.0
+importlib_metadata>=7.2.0
+zipp>=3.17.0
