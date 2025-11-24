@@ -69,3 +69,6 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+Archivos temporales de Manim
+backend/videos/videos/
+backend/videos/texts/
