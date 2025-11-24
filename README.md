@@ -1,9 +1,9 @@
 # 🦊 Proyecto Lotka-Volterra - Sistema de Simulación Quantum
 
-[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.9--3.13-blue.svg)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Dash-3.3.0-00D4FF.svg)](https://dash.plotly.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.121.2-009688.svg)](https://fastapi.tiangolo.com/)
-[![Manim](https://img.shields.io/badge/Manim-0.19.0-FF6188.svg)](https://www.manim.community/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Manim](https://img.shields.io/badge/Manim-0.19.0+-FF6188.svg)](https://www.manim.community/)
 
 Sistema avanzado de simulación y visualización del modelo depredador-presa de Lotka-Volterra con interfaz web interactiva, tema cyberpunk quantum, y generación de videos animados profesionales.
 
@@ -90,10 +90,12 @@ Este proyecto implementa una simulación numérica completa del sistema de ecuac
 
 ### Requisitos Previos
 
-- **Python** 3.8+ (recomendado 3.13)
-- **pip** actualizado
+- **Python** 3.9-3.13 (recomendado 3.12 o 3.13)
+  - ⚠️ **Importante**: Para Python 3.13, asegúrate de usar Manim >= 0.19.0 y ManimPango >= 0.6.0
+  - Ver [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) para más detalles
+- **pip** actualizado (25.0+)
 - **Sistema operativo**: Linux/macOS/Windows
-- **Opcional**: GPU compatible con OpenGL (para Manim)
+- **Opcional**: GPU compatible con OpenGL (para renderizado acelerado con Manim)
 
 ### Instalación Completa
 
@@ -102,13 +104,40 @@ Este proyecto implementa una simulación numérica completa del sistema de ecuac
 git clone https://github.com/floowxy/Project-Numerical-Analysis-Lotka-Volterra.git
 cd Project-Numerical-Analysis-Lotka-Volterra
 
-# 2. Crear entorno virtual
-python3 -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+# 2. Verificar versión de Python (debe ser 3.9 - 3.13)
+python3 --version
+# O si tienes varias versiones, usa específicamente:
+python3.13 --version  # Recomendado
+python3.12 --version  # También compatible
 
-# 3. Instalar todas las dependencias
+# 3. Crear entorno virtual con la versión específica
+# Opción A: Usar Python 3.13 (recomendado)
+python3.13 -m venv .venv
+
+# Opción B: Usar la versión por defecto (verificar que sea 3.9+)
+python3 -m venv .venv
+
+# 4. Activar el entorno virtual
+source .venv/bin/activate  # Linux/macOS
+# Windows: .venv\Scripts\activate
+
+# 5. Verificar que estás usando la versión correcta DENTRO del venv
+python --version  # Debe mostrar la versión con la que creaste el venv
+
+# 6. Actualizar pip
+pip install --upgrade pip
+
+# 7. Instalar todas las dependencias
 pip install -r requirements.txt
+
+# 8. Verificar instalación (opcional pero recomendado)
+python verify_installation.py
 ```
+
+> 📚 **Documentación adicional:**
+>
+> - 🚀 [QUICK_START.md](QUICK_START.md) - Guía rápida de instalación paso a paso
+> - 🐍 [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) - Compatibilidad de versiones Python
 
 ---
 
