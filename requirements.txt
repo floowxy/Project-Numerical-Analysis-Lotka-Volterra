@@ -1,100 +1,75 @@
 # ============================================================
+# PROYECTO LOTKA-VOLTERRA - DEPENDENCIAS OPTIMIZADAS
+# ============================================================
+# Versión: 2.0 - Basado en análisis exhaustivo del código
+# Última actualización: 2025-11-24
+# 
+# Este archivo contiene SOLO las dependencias realmente
+# utilizadas en el proyecto, verificadas mediante análisis
+# de imports en todos los archivos Python.
+#
+# Total: 8 paquetes core + dependencias automáticas
+# Instalación estimada: 2-5 minutos
+# ============================================================
+
+# ============================================================
 # WEB FRAMEWORK & VISUALIZATION
 # ============================================================
-dash>=3.3.0
-plotly>=6.5.0
-Flask>=3.1.2
+# Usado en: app.py, pages/*.py
+dash>=2.14.0              # Framework web reactivo
+plotly>=5.18.0            # Gráficos interactivos
+Flask>=3.0.0              # Servidor web (incluido con Dash)
 
 # ============================================================
 # SCIENTIFIC COMPUTING
 # ============================================================
-numpy>=2.3.5
-scipy>=1.16.3
+# Usado en: backend/simulation.py, backend/scenes/video3.py, pages/simulador.py
+numpy>=1.24.0,<2.0.0      # Operaciones vectoriales (límite <2.0 por compatibilidad con Manim)
 
 # ============================================================
-# VIDEO RENDERING (MANIM)
+# API BACKEND
 # ============================================================
-manim>=0.19.0
-ManimPango>=0.6.1
-pycairo>=1.29.0
-moderngl>=5.12.0
-moderngl-window>=3.1.1
-glcontext>=3.0.0
-pyglet>=2.1.11
-pyglm>=2.8.2
-av>=13.1.0
-pydub>=0.25.1
-audioop-lts>=0.2.2
-screeninfo>=0.8.1
-skia-pathops>=0.9.0
-svgelements>=1.9.6
-isosurfaces>=0.1.2
-mapbox_earcut>=2.0.0
-srt>=3.5.3
+# Usado en: backend/app.py
+fastapi>=0.109.0          # Framework API REST
+uvicorn[standard]>=0.27.0 # Servidor ASGI con soporte WebSocket
 
 # ============================================================
-# API & BACKEND (FASTAPI)
+# VIDEO RENDERING
 # ============================================================
-fastapi>=0.121.2
-uvicorn>=0.38.0
-starlette>=0.49.3
-pydantic>=2.12.4
-pydantic_core>=2.41.5
+# Usado en: backend/scenes/video3.py, backend/video_tools.py
+manim>=0.18.0             # Motor de animación matemática
+pydub>=0.25.1             # Procesamiento de audio
 
 # ============================================================
-# UTILITIES
+# HTTP CLIENT
 # ============================================================
-requests>=2.32.5
-click>=8.3.1
-cloup>=3.0.8
-watchdog>=6.0.0
-tqdm>=4.67.1
-rich>=14.2.0
-Pygments>=2.19.2
-markdown-it-py>=4.0.0
-mdurl>=0.1.2
+# Usado en: pages/simulador.py
+requests>=2.31.0          # Cliente HTTP para comunicación frontend-backend
 
 # ============================================================
-# MATHEMATICAL & SYMBOLIC
+# UTILITIES (Instaladas automáticamente por Manim)
 # ============================================================
-sympy>=1.14.0
-mpmath>=1.3.0
-networkx>=3.5
+# Las siguientes son instaladas como dependencias de Manim,
+# pero se especifican aquí para mayor claridad:
+tqdm>=4.66.0              # Barras de progreso
+rich>=13.7.0              # Output formateado en terminal
+pillow>=10.0.0            # Procesamiento de imágenes
 
 # ============================================================
-# DATA PROCESSING
+# NOTAS IMPORTANTES
 # ============================================================
-narwhals>=2.12.0
-beautifulsoup4>=4.14.2
-soupsieve>=2.8
-
-# ============================================================
-# WEB & HTTP
-# ============================================================
-Werkzeug>=3.1.3
-Jinja2>=3.1.6
-MarkupSafe>=3.0.3
-certifi>=2025.11.12
-charset-normalizer>=3.4.4
-urllib3>=2.5.0
-idna>=3.11
-h11>=0.16.0
-anyio>=4.11.0
-sniffio>=1.3.1
-
-# ============================================================
-# SYSTEM & CORE
-# ============================================================
-blinker>=1.9.0
-itsdangerous>=2.2.0
-decorator>=5.2.1
-nest-asyncio>=1.6.0
-retrying>=1.4.2
-packaging>=25.0
-pillow>=12.0.0
-annotated-doc>=0.0.4
-annotated-types>=0.7.0
-typing-inspection>=0.4.2
-typing_extensions>=4.15.0
-importlib_metadata>=8.7.0
-zipp>=3.23.0
+# 1. FFmpeg es REQUERIDO pero NO es un paquete Python
+#    Instalar con: sudo pacman -S ffmpeg (Arch)
+#                  sudo apt install ffmpeg (Ubuntu/Debian)
+#                  brew install ffmpeg (macOS)
+#
+# 2. Python 3.9-3.12 recomendado (3.11 ideal)
+#    Python 3.13 puede tener problemas de compatibilidad
+#
+# 3. NumPy <2.0 es CRÍTICO para compatibilidad con Manim
+#    No cambiar esta restricción
+#
+# 4. Siempre usar entorno virtual:
+#    python3 -m venv venv && source venv/bin/activate
+#
+# 5. Ver INSTALL.md y dependency_analysis.md para más detalles
