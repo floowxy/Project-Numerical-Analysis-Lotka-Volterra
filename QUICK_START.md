@@ -1,33 +1,33 @@
-# 🚀 Quick Start Installation Guide
+# 🚀 Guía Rápida de Instalación
 
-This guide will help you set up the Lotka-Volterra Simulation System on your machine.
+Esta guía te ayudará a configurar el Sistema de Simulación Lotka-Volterra en tu máquina.
 
-## ✅ Prerequisites Check
+## ✅ Verificación de Prerequisitos
 
-Before starting, make sure you have:
+Antes de comenzar, asegúrate de tener:
 
-- [ ] Python 3.9 or higher (3.12+ recommended)
-- [ ] Git installed
-- [ ] At least 2GB of free disk space
-- [ ] Internet connection for downloading dependencies
+- [ ] Python 3.9 o superior (3.12+ recomendado)
+- [ ] Git instalado
+- [ ] Al menos 2GB de espacio libre en disco
+- [ ] Conexión a internet para descargar dependencias
 
-Check your Python version:
+Verifica tu versión de Python:
 
 ```bash
 python3 --version
-# Should show: Python 3.9.x or higher
+# Debe mostrar: Python 3.9.x o superior
 ```
 
-## 📦 Installation Steps
+## 📦 Pasos de Instalación
 
-### 1. Clone the Repository
+### 1. Clonar el Repositorio
 
 ```bash
 git clone https://github.com/floowxy/Project-Numerical-Analysis-Lotka-Volterra.git
 cd Project-Numerical-Analysis-Lotka-Volterra
 ```
 
-### 2. Create Virtual Environment
+### 2. Crear Entorno Virtual
 
 **IMPORTANTE:** Especifica la versión de Python que deseas usar.
 
@@ -75,140 +75,140 @@ python --version
 
 > ⚠️ **Nota Importante:** El venv usará la versión de Python con la que lo crees. Si usas `python3.13 -m venv .venv`, el venv usará Python 3.13 para todas las instalaciones.
 
-You should see `(.venv)` in your terminal prompt.
+Deberías ver `(.venv)` en tu prompt de la terminal.
 
-### 3. Upgrade pip
+### 3. Actualizar pip
 
 ```bash
 pip install --upgrade pip
 ```
 
-### 4. Install Dependencies
+### 4. Instalar Dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-This will take 3-5 minutes depending on your internet connection.
+Esto tomará 3-5 minutos dependiendo de tu conexión a internet.
 
-### 5. Verify Installation
+### 5. Verificar Instalación
 
 ```bash
 python verify_installation.py
 ```
 
-You should see all green checkmarks ✅ if everything is installed correctly.
+Deberías ver todas las marcas verdes ✅ si todo está instalado correctamente.
 
-## 🎯 Running the Application
+## 🎯 Ejecutar la Aplicación
 
-You need **TWO terminals** running simultaneously:
+Necesitas **DOS terminales** ejecutándose simultáneamente:
 
-### Terminal 1 - Start Backend (FastAPI)
+### Terminal 1 - Iniciar Backend (FastAPI)
 
 ```bash
-source .venv/bin/activate  # Don't forget to activate!
+source .venv/bin/activate  # ¡No olvides activar!
 uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-You should see:
+Deberías ver:
 
 ```
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
-### Terminal 2 - Start Frontend (Dash)
+### Terminal 2 - Iniciar Frontend (Dash)
 
-Open a **new** terminal:
+Abre una terminal **nueva**:
 
 ```bash
 cd Project-Numerical-Analysis-Lotka-Volterra
-source .venv/bin/activate  # Activate here too!
+source .venv/bin/activate  # ¡Activar aquí también!
 python app.py
 ```
 
-You should see:
+Deberías ver:
 
 ```
 Dash is running on http://0.0.0.0:8050/
 ```
 
-### 3. Open the Application
+### 3. Abrir la Aplicación
 
-Open your web browser and go to:
+Abre tu navegador web y ve a:
 
 ```
 http://localhost:8050
 ```
 
-## 🎬 Testing Video Generation
+## 🎬 Probar Generación de Videos
 
-1. Navigate to **Simulador** page
-2. Adjust the parameters (or use defaults)
-3. Click **"GENERAR VIDEO"**
-4. Wait for the video to render (30-60 seconds)
-5. Click **"DESCARGAR VIDEO"**
+1. Navega a la página **Simulador**
+2. Ajusta los parámetros (o usa los valores por defecto)
+3. Haz clic en **"GENERAR VIDEO"**
+4. Espera a que el video se renderice (30-60 segundos)
+5. Haz clic en **"DESCARGAR VIDEO"**
 
-## 🐛 Common Issues
+## 🐛 Problemas Comunes
 
-### Issue: `ModuleNotFoundError`
+### Problema: `ModuleNotFoundError`
 
-**Solution:**
+**Solución:**
 
 ```bash
-# Make sure you're in the virtual environment
+# Asegúrate de estar en el entorno virtual
 source .venv/bin/activate
-# Verify which Python you're using
-which python  # Should show .venv/bin/python
+# Verifica qué Python estás usando
+which python  # Debe mostrar .venv/bin/python
 ```
 
-### Issue: `Connection refused` when generating video
+### Problema: `Connection refused` al generar video
 
-**Solution:**
+**Solución:**
 
-- Make sure **both** terminals are running
-- Backend should be on port 8000
-- Frontend should be on port 8050
+- Asegúrate de que **ambas** terminales estén ejecutándose
+- Backend debe estar en el puerto 8000
+- Frontend debe estar en el puerto 8050
 
-### Issue: Virtual environment not activating on Windows
+### Problema: El entorno virtual no se activa en Windows
 
-**Solution:**
+**Solución:**
 
 ```powershell
-# If using PowerShell, you might need to enable scripts
+# Si usas PowerShell, puede que necesites habilitar scripts
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Then activate
+# Luego activar
 .venv\Scripts\Activate.ps1
 ```
 
-### Issue: Python 3.13 compatibility errors
+### Problema: Errores de compatibilidad con Python 3.13
 
-**Solution:**
-See [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) for detailed information.
+**Solución:**
+Ver [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) para información detallada.
 
-The key requirements are:
+Los requisitos clave son:
 
 - Manim >= 0.19.0
 - ManimPango >= 0.6.0
 
-## 📊 System Requirements
+## 📊 Requisitos del Sistema
 
-### Minimum
+### Mínimo
 
-- **CPU**: 2 cores
+- **CPU**: 2 núcleos
 - **RAM**: 4GB
-- **Storage**: 2GB free space
-- **OS**: Linux, macOS, or Windows 10+
+- **Almacenamiento**: 2GB de espacio libre
+- **SO**: Linux, macOS, o Windows 10+
 
-### Recommended (for fast video rendering)
+### Recomendado (para renderizado rápido de videos)
 
-- **CPU**: 4+ cores
+- **CPU**: 4+ núcleos
 - **RAM**: 8GB+
-- **GPU**: OpenGL 3.3+ compatible
-- **Storage**: 5GB+ free space (for video files)
+- **GPU**: Compatible con OpenGL 3.3+
+- **Almacenamiento**: 5GB+ de espacio libre (para archivos de video)
 
-## 🔧 Optional: System Dependencies for Manim
+## 🔧 Opcional: Dependencias del Sistema para Manim
 
-For better video quality and performance, install system dependencies:
+Para mejor calidad de video y rendimiento, instala las dependencias del sistema:
 
 ### Linux (Ubuntu/Debian)
 
@@ -236,44 +236,44 @@ brew install cairo pango ffmpeg
 
 ### Windows
 
-1. Download FFmpeg from <https://ffmpeg.org/download.html>
-2. Extract to `C:\ffmpeg`
-3. Add `C:\ffmpeg\bin` to your PATH environment variable
+1. Descargar FFmpeg desde <https://ffmpeg.org/download.html>
+2. Extraer a `C:\ffmpeg`
+3. Agregar `C:\ffmpeg\bin` a tu variable de entorno PATH
 
-## 🎓 Next Steps
+## 🎓 Próximos Pasos
 
-Once everything is running:
+Una vez que todo esté funcionando:
 
-1. 📖 Read the full [README.md](README.md) for detailed documentation
-2. 🧪 Experiment with different parameters in the simulator
-3. 📊 Explore the different visualization types
-4. 🎬 Generate your first animated video
-5. 📄 Check out the included LaTeX documents (Informe and Beamer)
+1. 📖 Lee el [README.md](README.md) completo para documentación detallada
+2. 🧪 Experimenta con diferentes parámetros en el simulador
+3. 📊 Explora los diferentes tipos de visualización
+4. 🎬 Genera tu primer video animado
+5. 📄 Revisa los documentos LaTeX incluidos (Informe y Beamer)
 
-## 💡 Pro Tips
+## 💡 Consejos Profesionales
 
-1. **Keep terminals organized**: Use terminal tabs or a terminal multiplexer like `tmux`
-2. **Use default parameters first**: Start with the default values to ensure everything works
-3. **Video quality**: First test with default settings, then increase quality if needed
-4. **Performance**: Close other applications when rendering videos
-5. **Backups**: The system auto-cleans old videos, but save important ones
+1. **Organiza las terminales**: Usa pestañas de terminal o un multiplexor como `tmux`
+2. **Usa primero los parámetros por defecto**: Comienza con los valores predeterminados para asegurar que todo funcione
+3. **Calidad de video**: Primero prueba con configuración por defecto, luego aumenta la calidad si es necesario
+4. **Rendimiento**: Cierra otras aplicaciones al renderizar videos
+5. **Respaldos**: El sistema limpia automáticamente videos antiguos, pero guarda los importantes
 
-## 📞 Need Help?
+## 📞 ¿Necesitas Ayuda?
 
-- Check [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) for version issues
-- Review the full [README.md](README.md) for detailed information
+- Revisa [PYTHON_VERSION_COMPATIBILITY.md](PYTHON_VERSION_COMPATIBILITY.md) para problemas de versiones
+- Consulta el [README.md](README.md) completo para información detallada
 - GitHub Issues: <https://github.com/floowxy/Project-Numerical-Analysis-Lotka-Volterra/issues>
 
-## ✨ You're All Set
+## ✨ ¡Todo Listo
 
-If you see the application in your browser, congratulations! 🎉
+Si ves la aplicación en tu navegador, ¡felicitaciones! 🎉
 
-You're now running a professional Lotka-Volterra simulation system with:
+Ahora estás ejecutando un sistema profesional de simulación Lotka-Volterra con:
 
-- ✅ Interactive web interface
-- ✅ Real-time parameter adjustment
-- ✅ Multiple visualization types
-- ✅ Professional video generation
-- ✅ LaTeX documentation integration
+- ✅ Interfaz web interactiva
+- ✅ Ajuste de parámetros en tiempo real
+- ✅ Múltiples tipos de visualización
+- ✅ Generación profesional de videos
+- ✅ Integración de documentación LaTeX
 
-Happy simulating! 🦊
+¡Feliz simulación! 🦊
