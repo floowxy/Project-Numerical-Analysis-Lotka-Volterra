@@ -49,13 +49,13 @@ nohup.out
 # Videos generados (muy pesados para GitHub)
 backend/videos/output/*.mp4
 backend/videos/VideoLotkaProV2/
+backend/videos/**/*.mp4
 
 # Configuración temporal de Manim
 backend/videos/lotka_config.json
 
 # Media files (si son muy grandes)
-# Descomenta si quieres excluir todos los videos
-# media/videos/**/*.mp4
+media/videos/**/*.mp4
 
 # Jupyter Notebooks checkpoints
 .ipynb_checkpoints/
@@ -78,7 +78,7 @@ backend/videos/videos/
 backend/videos/texts/
 
 # ========================================
-# 🔒 SEGURIDAD - INFORMACIÓN SENSIBLE
+# SEGURIDAD - INFORMACIÓN SENSIBLE
 # ========================================
 
 # Cloudflare Tunnel (NUNCA subir estos archivos)
