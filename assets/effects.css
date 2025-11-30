@@ -1,4 +1,12 @@
-/* =========================================
+/* ======================================================
+   EFECTOS PREMIUM ADICIONALES - LOTKA VOLTERRA
+   - Partículas animadas de fondo
+   - Efectos de loader personalizado
+   - Animaciones extra
+   - Efectos quantum loading
+====================================================== */
+
+/* ==========================================
    1. PARTÍCULAS DE FONDO ANIMADAS
 ========================================== */
 @keyframes particleFloat {
@@ -380,4 +388,418 @@
 
 .floating-glow {
     animation: floatingGlow 3s ease-in-out infinite;
+}
+
+/* ======================================================
+   13. ESTILOS COMPARATIVA EULER vs RK4
+   - Tablas de iteraciones
+   - Tarjetas de métodos
+   - Indicadores de diferencia
+====================================================== */
+
+/* Grid de métodos */
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tarjetas de método */
+.method-card {
+    background: linear-gradient(135deg,
+            rgba(15, 20, 35, 0.9),
+            rgba(10, 15, 30, 0.95));
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.euler-card {
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.euler-card::before {
+    background: linear-gradient(90deg, #ff6b00, #ffa500);
+}
+
+.euler-card:hover {
+    border-color: rgba(255, 165, 0, 0.6);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.2);
+}
+
+.rk4-card {
+    border: 1px solid rgba(0, 243, 255, 0.3);
+}
+
+.rk4-card::before {
+    background: linear-gradient(90deg, #00f3ff, #bc13fe);
+}
+
+.rk4-card:hover {
+    border-color: rgba(0, 243, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+.method-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.euler-card .method-title {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.rk4-card .method-title {
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.method-label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.method-formula {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+    border-left: 3px solid;
+}
+
+.euler-card .method-formula {
+    border-left-color: #ffa500;
+}
+
+.rk4-card .method-formula {
+    border-left-color: #00f3ff;
+}
+
+.method-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.method-stats > div {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.euler-card .stat-value {
+    color: #ffa500;
+}
+
+.rk4-card .stat-value {
+    color: #00f3ff;
+}
+
+/* Tabla de comparación */
+.table-container {
+    background: linear-gradient(135deg,
+            rgba(15, 20, 35, 0.9),
+            rgba(10, 15, 30, 0.95));
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.table-title {
+    color: #00f3ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.comparison-table th {
+    padding: 15px 12px;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(0, 243, 255, 0.3);
+}
+
+.th-iter, .th-time {
+    background: rgba(100, 100, 100, 0.2);
+    color: #e2e8f0;
+}
+
+.th-euler {
+    background: rgba(255, 165, 0, 0.15);
+    color: #ffa500;
+}
+
+.th-rk4 {
+    background: rgba(0, 243, 255, 0.15);
+    color: #00f3ff;
+}
+
+.th-diff {
+    background: rgba(188, 19, 254, 0.15);
+    color: #bc13fe;
+}
+
+.th-sub {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.euler-header {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffc966;
+}
+
+.rk4-header {
+    background: rgba(0, 243, 255, 0.1);
+    color: #66f7ff;
+}
+
+.diff-header {
+    background: rgba(188, 19, 254, 0.1);
+    color: #d066ff;
+}
+
+.comparison-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.comparison-table tbody tr:nth-child(even):hover {
+    background: rgba(0, 243, 255, 0.08);
+}
+
+.iter-cell {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+    font-family: 'Courier New', monospace;
+}
+
+.iter-num {
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.euler-cell {
+    color: #ffc966;
+}
+
+.rk4-cell {
+    color: #66f7ff;
+}
+
+/* Indicadores de diferencia */
+.diff-low {
+    color: #00ff9d;
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
+}
+
+.diff-medium {
+    color: #ffa500;
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+.diff-high {
+    color: #ff0055;
+    text-shadow: 0 0 5px rgba(255, 0, 85, 0.5);
+    font-weight: 700;
+}
+
+/* Caja de resumen */
+.summary-box {
+    background: linear-gradient(135deg,
+            rgba(0, 243, 255, 0.05),
+            rgba(188, 19, 254, 0.05));
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.summary-title {
+    color: #00f3ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.summary-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.summary-label {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.summary-value {
+    color: #e2e8f0;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+}
+
+.euler-summary {
+    border-left: 3px solid #ffa500;
+}
+
+.euler-summary .summary-value {
+    color: #ffc966;
+}
+
+.rk4-summary {
+    border-left: 3px solid #00f3ff;
+}
+
+.rk4-summary .summary-value {
+    color: #66f7ff;
+}
+
+.diff-summary {
+    border-left: 3px solid #bc13fe;
+}
+
+.diff-summary .summary-value {
+    color: #d066ff;
+}
+
+/* Caja de leyenda */
+.legend-box {
+    background: linear-gradient(135deg,
+            rgba(15, 20, 35, 0.8),
+            rgba(10, 15, 30, 0.9));
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-top: 30px;
+}
+
+.legend-title {
+    color: #e2e8f0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.legend-items > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-dot.diff-low {
+    background: #00ff9d;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.legend-dot.diff-medium {
+    background: #ffa500;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.legend-dot.diff-high {
+    background: #ff0055;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+}
+
+/* Subtítulos */
+.subgroup-title {
+    color: #bc13fe;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(188, 19, 254, 0.3);
+}
+
+/* Animación para resultados */
+.results-container {
+    animation: fadeInUp 0.5s ease-out;
 }
