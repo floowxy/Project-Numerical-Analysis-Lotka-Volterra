@@ -50,7 +50,7 @@ def serve_video_download(filename):
 # NAVEGACIÓN
 # ---------------------------------------------------------
 def make_nav():
-    order = ["Inicio", "Informe", "Beamer", "Simulador"]
+    order = ["Inicio", "Informe", "Beamer", "Simulador","Comparativa"]
     pages = {p["name"]: p for p in dash.page_registry.values()}
     items = []
     for name in order:
