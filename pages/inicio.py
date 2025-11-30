@@ -10,7 +10,7 @@ dash.register_page(
 
 def make_card(icon, title, desc, link_text, link_href, btn_class="btn-primary-glow"):
     return html.Div(
-        className="home-card", # Esta clase ahora define la "Caja"
+        className="home-card",
         children=[
             # Parte superior: Icono y Textos
             html.Div([
@@ -18,7 +18,7 @@ def make_card(icon, title, desc, link_text, link_href, btn_class="btn-primary-gl
                 html.H3(title, className="card-title"),
                 html.P(desc, className="card-desc"),
             ]),
-            # Parte inferior: Botón (centrado por el CSS del padre)
+            # Parte inferior: Botón
             html.Div(
                 dcc.Link(link_text, href=link_href, className=btn_class)
             )
@@ -40,7 +40,7 @@ layout = html.Div(
             ]
         ),
 
-        # GRID DE TARJETAS (Ahora sí se verán como cajas)
+        # GRID DE TARJETAS (4 tarjetas ahora)
         html.Div(
             className="home-grid",
             children=[
@@ -50,6 +50,15 @@ layout = html.Div(
                     "Entorno interactivo para visualización de órbitas en tiempo real y renderizado de video.", 
                     "ENTRAR AL SIMULADOR", 
                     "/simulador", 
+                    "btn-primary-glow"
+                ),
+
+                make_card(
+                    "⚡", 
+                    "COMPARATIVA NUMÉRICA", 
+                    "Análisis iteración por iteración: Euler vs Runge-Kutta 4. Visualiza la diferencia de precisión.", 
+                    "VER COMPARATIVA", 
+                    "/comparativa", 
                     "btn-primary-glow"
                 ),
 
