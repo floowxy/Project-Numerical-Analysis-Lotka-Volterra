@@ -36,7 +36,7 @@ layout = html.Div(
                         html.H4("VISOR DE DOCUMENTO", className="group-title", style={"borderBottom": "none", "marginBottom": "0"}),
                         html.A(
                             "⬇ DESCARGAR ARCHIVO PDF",
-                            href="/docs/informe/informe_final.pdf",
+                            href="/docs/informe/INFORME FINAL ANALISIS NUMERICO.pdf",
                             target="_blank",
                             className="btn-secondary-glow",
                             style={"textDecoration": "none", "fontSize": "0.9rem"}
@@ -46,7 +46,7 @@ layout = html.Div(
 
                 # Iframe con borde neón sutil
                 html.Iframe(
-                    src="/docs/informe/informe_final.pdf",
+                    src="/docs/informe/INFORME FINAL ANALISIS NUMERICO.pdf",
                     style={
                         "width": "100%",
                         "height": "85vh",
