@@ -36,7 +36,7 @@ layout = html.Div(
                         html.H4("VISUALIZADOR DE SLIDES", className="group-title", style={"borderBottom": "none", "marginBottom": "0"}),
                         html.A(
                             "⬇ DESCARGAR SLIDES PDF",
-                            href="/docs/beamer/beamer_final.pdf",
+                            href="/docs/beamer/BEAMER FINAL.pdf",
                             target="_blank",
                             className="btn-secondary-glow",
                             style={"textDecoration": "none", "fontSize": "0.9rem"}
@@ -46,7 +46,7 @@ layout = html.Div(
 
                 # Iframe
                 html.Iframe(
-                    src="/docs/beamer/beamer_final.pdf",
+                    src="/docs/beamer/BEAMER FINAL.pdf",
                     style={
                         "width": "100%",
                         "height": "85vh",
