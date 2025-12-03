@@ -100,38 +100,65 @@ Este proyecto implementa una simulación numérica completa del sistema de ecuac
 ### Instalación Completa
 
 ```bash
-# 1. Clonar el repositorio
+### Instalación Completa (Windows / Linux / macOS)
+
+1. Clonar el repositorio
 git clone https://github.com/floowxy/Project-Numerical-Analysis-Lotka-Volterra.git
 cd Project-Numerical-Analysis-Lotka-Volterra
 
-# 2. Verificar versión de Python (debe ser 3.9 - 3.13)
-python3 --version
-# O si tienes varias versiones, usa específicamente:
-python3.13 --version  # Recomendado
-python3.12 --version  # También compatible
+2. Verificar versión de Python (debe ser 3.9 – 3.13)
+python --version          # o: python3 --version / py --version
 
-# 3. Crear entorno virtual con la versión específica
-# Opción A: Usar Python 3.13 (recomendado)
-python3.13 -m venv .venv
+3. Crear entorno virtual .venv
 
-# Opción B: Usar la versión por defecto (verificar que sea 3.9+)
-python3 -m venv .venv
+   # Opción A: usar una versión específica (ej. 3.13 recomendada)
+   # Linux / macOS
+   python3.13 -m venv .venv
+   # Windows
+   py -3.13 -m venv .venv
 
-# 4. Activar el entorno virtual
-source .venv/bin/activate  # Linux/macOS
-# Windows: .venv\Scripts\activate
+   # Opción B: usar la versión por defecto (asegurarse de que es 3.9+)
+   python -m venv .venv    # o: python3 -m venv .venv / py -3 -m venv .venv
 
-# 5. Verificar que estás usando la versión correcta DENTRO del venv
-python --version  # Debe mostrar la versión con la que creaste el venv
+4. Activar el entorno virtual
 
-# 6. Actualizar pip
-pip install --upgrade pip
+   # Linux / macOS
+   source .venv/bin/activate
 
-# 7. Instalar todas las dependencias
+   # Windows (CMD)
+   .venv\Scripts\activate
+
+5. Verificar que estás usando la versión correcta DENTRO del venv
+python --version          # Debe mostrar la versión con la que creaste el venv
+
+6. Actualizar pip
+python -m pip install --upgrade pip
+
+7. Instalar dependencias del proyecto
 pip install -r requirements.txt
 
-# 8. Verificar instalación (opcional pero recomendado)
+8. Verificar instalación de dependencias
 python verify_installation.py
+
+9. Lanzar el backend (FastAPI + Uvicorn) ─ TERMINAL 1
+uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
+
+10. Lanzar el frontend (Dash) ─ TERMINAL 2
+# Abrir otra terminal y repetir activación del entorno:
+
+# Linux / macOS
+cd /ruta/al/proyecto/Project-Numerical-Analysis-Lotka-Volterra
+source .venv/bin/activate
+
+# Windows (CMD)
+cd C:\ruta\al\proyecto\Project-Numerical-Analysis-Lotka-Volterra
+.venv\Scripts\activate
+
+python app.py
+
+11. Abrir en el navegador
+# Ir a:
+#   http://localhost:8050
 ```
 
 > 📚 **Documentación adicional:**
